@@ -21,12 +21,14 @@ const startEvenGame = () => {
       console.log('Correct!');
     } else if (number % 2 === 0 && answer === 'no') {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes')`);
-      return console.log(`Let's try again, ${name}`);
+      console.log(`Let's try again, ${name}`);
+      return;
     } else if (number % 2 !== 0 && answer === 'yes') {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no')`);
-      return console.log(`Let's try again, ${name}`);
+      console.log(`Let's try again, ${name}`);
+      return;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };
 export default startEvenGame;
