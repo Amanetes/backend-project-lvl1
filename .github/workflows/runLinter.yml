@@ -4,9 +4,9 @@ name: Node CI
 # Trigger the workflow on push or pull request
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   build:
