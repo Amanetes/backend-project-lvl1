@@ -18,7 +18,7 @@ const gameRoundGenerator = (gameRules, gameLogic) => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}`);
       return;
     }
