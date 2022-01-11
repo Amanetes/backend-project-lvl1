@@ -4,3 +4,4 @@
 [![linterCheck](https://github.com/Amanetes/backend-project-lvl1/actions/workflows/runLinter.yml/badge.svg)](https://github.com/Amanetes/backend-project-lvl1/actions/workflows/runLinter.yml)
 [![asciicast](https://asciinema.org/a/dvw99DVfJ1H7KXCZSRjnCgFnb.svg)](https://asciinema.org/a/dvw99DVfJ1H7KXCZSRjnCgFnb)
 [![asciicast](https://asciinema.org/a/k4kCudVQz6xpCvOhE1nXeH657.svg)](https://asciinema.org/a/k4kCudVQz6xpCvOhE1nXeH657)
+[![asciicast](https://asciinema.org/a/xT5Wbj0z5Ilk8otrXSybjk7zy.svg)](https://asciinema.org/a/xT5Wbj0z5Ilk8otrXSybjk7zy)
