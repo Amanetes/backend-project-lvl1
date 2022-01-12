@@ -23,7 +23,7 @@ const gameRoundGenerator = (gameRules, gameLogic) => {
       return;
     }
   }
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export { getRandomNumber, gameRoundGenerator };
