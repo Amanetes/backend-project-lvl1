@@ -6,7 +6,7 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)
 const roundCount = 3;
 // Генератор раундов, взаимодействие с пользователем
 const gameRoundGenerator = (gameRules, gameLogic) => {
-  console.log('Welcome to the Brain Games');
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameRules);
