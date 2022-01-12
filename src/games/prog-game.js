@@ -8,7 +8,7 @@ const gameRules = 'What number is missing in the progression?';
 // от 5 до 10 чисел
 const getProg = (a, step) => {
   const progArr = [];
-  for (let i = 0; i < getRandomNumber(5, 10); i += 1) {
+  for (let i = 0; i <= getRandomNumber(5, 10); i += 1) {
     // вычисление результата по формуле нахождения члена прогрессии
     const result = a + (step * i);
     progArr.push(result);
