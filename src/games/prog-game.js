@@ -46,7 +46,7 @@ const gameLogic = () => {
   const hiddenArr = hide(prog, getIndex);
   // Константы вопроса игры и правильного ответа
   // Приводим скрытый массив к строке
-  const gameQuestion = `${hiddenArr.toString()}`;
+  const gameQuestion = `${hiddenArr.join(' ')}`;
   // правильным ответом будет случайный элемент массива с прогрессией
   const correctAnswer = `${prog[getIndex]}`;
   // Результат игры
