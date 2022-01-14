@@ -1,8 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// number randomizer
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 const roundCount = 3;
 // Генератор раундов, взаимодействие с пользователем
 const gameRoundGenerator = (gameRules, gameLogic) => {
@@ -11,7 +8,7 @@ const gameRoundGenerator = (gameRules, gameLogic) => {
   console.log(`Hello, ${name}!`);
   console.log(gameRules);
 
-  for (let i = 1; i <= roundCount; i += 1) {
+  for (let i = 0; i < roundCount; i += 1) {
     const [gameQuestion, correctAnswer] = gameLogic();
     console.log(`Question: ${gameQuestion}`);
     const userAnswer = readlineSync.question('Your answer:');
@@ -26,4 +23,4 @@ const gameRoundGenerator = (gameRules, gameLogic) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export { getRandomNumber, gameRoundGenerator };
+export default gameRoundGenerator;
