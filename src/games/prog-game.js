@@ -1,42 +1,32 @@
 import gameRoundGenerator from '../index.js';
 import getRandomNumber from '../randomizer.js';
 
-// Правила игры
-
 const gameRules = 'What number is missing in the progression?';
 
-const getProg = (a, step) => {
-  const progArr = [];
-  for (let i = 0; i <= getRandomNumber(5, 10); i += 1) {
-    const result = a + (step * i);
-    progArr.push(result);
+const getProg = (initialNumber, step, length) => {
+  const progression = [];
+  for (let i = 0; i <= length; i += 1) {
+    const result = initialNumber + (step * i);
+    progression.push(result);
   }
-  return progArr;
+  return progression;
 };
-const hide = (arr, num) => {
-  const hideNum = '..';
-  const newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr.indexOf(arr[i]) === num) {
-      newArr.push(hideNum);
-    } else {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
+
+const hide = (progression, hiddenIndex) => {
+  const hiddenArr = progression;
+  hiddenArr[hiddenIndex] = '..';
+  return hiddenArr.join(' ');
 };
 
 const gameLogic = () => {
-  const progElem = getRandomNumber(0, 100);
-  const progStep = getRandomNumber(1, 10);
-  const prog = getProg(progElem, progStep);
-  const gameResult = [];
-  const getIndex = getRandomNumber(0, prog.length - 1);
-  const hiddenArr = hide(prog, getIndex);
-  const gameQuestion = `${hiddenArr.join(' ')}`;
-  const correctAnswer = `${prog[getIndex]}`;
-  gameResult.push(gameQuestion, correctAnswer);
-  return gameResult;
+  const randomInitialNumber = getRandomNumber(0, 100);
+  const randomStep = getRandomNumber(1, 10);
+  const randomLength = getRandomNumber(5, 10);
+  const progression = getProg(randomInitialNumber, randomStep, randomLength);
+  const getIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = `${progression[getIndex]}`;
+  const gameQuestion = `${hide(progression, getIndex)}`;
+  return [gameQuestion, correctAnswer];
 };
 
 const startProgGame = () => gameRoundGenerator(gameRules, gameLogic);
