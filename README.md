@@ -1,13 +1,13 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Amanetes/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Amanetes/backend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f3da0aa1821ba0aa5cbc/maintainability)](https://codeclimate.com/github/Amanetes/backend-project-lvl1/maintainability)
 [![linterCheck](https://github.com/Amanetes/backend-project-lvl1/actions/workflows/runLinter.yml/badge.svg)](https://github.com/Amanetes/backend-project-lvl1/actions/workflows/runLinter.yml)
 
 ## Hello and welcome to my first project!
 
 This project includes 5 different games
 
-To install games simply type `make install` in your command line
+To install games simply type `make install` in your command line and then run `npm link` command
 
 ### 1. Brain-Even
 To launch brain-even game type `brain-even` in command line
