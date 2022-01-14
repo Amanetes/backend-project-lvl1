@@ -1,34 +1,35 @@
-import { gameRoundGenerator, getRandomNumber } from '../index.js';
+import gameRoundGenerator from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
-// Правила игры
 const gameRules = 'What is the result of the expression?';
-// Рандомизация математических операторов
+
 const operators = ['+', '-', '*'];
 const randomOperator = operators[Math.floor(Math.random() * operators.length)];
 
-// Логика игры
-const gameLogic = () => {
-  const firstNum = getRandomNumber(0, 100);
-  const secondNum = getRandomNumber(0, 100);
-  const gameQuestion = `${firstNum} ${randomOperator} ${secondNum}`;
+const calculate = (a, b) => {
   let sum = 0;
-  const gameResult = [];
   switch (randomOperator) {
     case '+':
-      sum = firstNum + secondNum;
+      sum = a + b;
       break;
     case '-':
-      sum = firstNum - secondNum;
+      sum = a - b;
       break;
     case '*':
-      sum = firstNum * secondNum;
+      sum = a * b;
       break;
     default:
       return null;
   }
-  const correctAnswer = `${sum}`;
-  gameResult.push(gameQuestion, correctAnswer);
-  return gameResult;
+  return sum;
+};
+
+const gameLogic = () => {
+  const firstNumber = getRandomNumber(0, 100);
+  const secondNumber = getRandomNumber(0, 100);
+  const gameQuestion = `${firstNumber} ${randomOperator} ${secondNumber}`;
+  const correctAnswer = `${calculate(firstNumber, secondNumber)}`;
+  return [gameQuestion, correctAnswer];
 };
 
 const startCalcGame = () => gameRoundGenerator(gameRules, gameLogic);
