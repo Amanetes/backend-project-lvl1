@@ -1,17 +1,14 @@
-import { gameRoundGenerator, getRandomNumber } from '../index.js';
-
-// Правила игры
+import gameRoundGenerator from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-// Определение функции простоты числа
-// делится без остатка только на 1 и само на себя
-
 const isPrime = (number) => {
+  const halfNumber = number / 2;
   if (number < 2) {
     return false;
   }
-  for (let divisor = 2; divisor <= (number / 2); divisor += 1) {
+  for (let divisor = 2; divisor <= halfNumber; divisor += 1) {
     if (number % divisor === 0) {
       return false;
     }
@@ -22,10 +19,8 @@ const isPrime = (number) => {
 const gameLogic = () => {
   const number = getRandomNumber(0, 100);
   const gameQuestion = `${number}`;
-  const gameResult = [];
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
-  gameResult.push(gameQuestion, correctAnswer);
-  return gameResult;
+  return [gameQuestion, correctAnswer];
 };
 
 const startProgGame = () => gameRoundGenerator(gameRules, gameLogic);

@@ -1,5 +1,5 @@
-import { gameRoundGenerator, getRandomNumber } from '../index.js';
-// Правила игры
+import gameRoundGenerator from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
@@ -11,13 +11,11 @@ const greatestDivisor = (a, b) => {
 };
 
 const gameLogic = () => {
-  const firstNum = getRandomNumber(0, 100);
-  const secondNum = getRandomNumber(0, 100);
-  const gameResult = [];
-  const gameQuestion = `${firstNum} ${secondNum}`;
-  const correctAnswer = `${greatestDivisor(firstNum, secondNum)}`;
-  gameResult.push(gameQuestion, correctAnswer);
-  return gameResult;
+  const firstNumber = getRandomNumber(0, 100);
+  const secondNumber = getRandomNumber(0, 100);
+  const gameQuestion = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = `${greatestDivisor(firstNumber, secondNumber)}`;
+  return [gameQuestion, correctAnswer];
 };
 
 const startGcdGame = () => gameRoundGenerator(gameRules, gameLogic);
