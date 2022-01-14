@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const roundCount = 3;
-// Генератор раундов, взаимодействие с пользователем
+
 const gameRoundGenerator = (gameRules, gameLogic) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -12,13 +12,12 @@ const gameRoundGenerator = (gameRules, gameLogic) => {
     const [gameQuestion, correctAnswer] = gameLogic();
     console.log(`Question: ${gameQuestion}`);
     const userAnswer = readlineSync.question('Your answer:');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else if (userAnswer !== correctAnswer) {
+    if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct');
   }
   console.log(`Congratulations, ${name}!`);
 };
