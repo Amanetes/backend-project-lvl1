@@ -12,7 +12,7 @@ To install games simply type `make install` in your command line and then run `n
 ### 1. Brain-Even
 To launch brain-even game type `brain-even` in command line
 
-[![asciicast](https://asciinema.org/a/dvw99DVfJ1H7KXCZSRjnCgFnb.svg)](https://asciinema.org/a/dvw99DVfJ1H7KXCZSRjnCgFnb)
+[![asciicast](https://asciinema.org/a/QNf7A9KtsZ8idcakrkfLrLUrA.svg)](https://asciinema.org/a/QNf7A9KtsZ8idcakrkfLrLUrA)
 ### 2. Brain-Calc
 To launch brain-calc game type `brain-calc` in command line
 
@@ -24,7 +24,7 @@ To launch brain-gcd game type `brain-gcd` in command line
 ### 4. Brain-Prog
 To launc brain-prog game type `brain-prog` in command line
 
-[![asciicast](https://asciinema.org/a/ReDetkO6ng9vi0xfJVWGoz5dR.svg)](https://asciinema.org/a/ReDetkO6ng9vi0xfJVWGoz5dR)
+[![asciicast](https://asciinema.org/a/n6whpdRPxFU2AHaw0yXhPQiZJ.svg)](https://asciinema.org/a/n6whpdRPxFU2AHaw0yXhPQiZJ)
 ### 5. Brain-Prime
 To launch brain-prime type `brain-prime` in command line
 
