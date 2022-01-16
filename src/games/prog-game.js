@@ -28,6 +28,6 @@ const gameLogic = () => {
   return [gameQuestion, correctAnswer];
 };
 
-const startProgGame = () => gameRoundGenerator(gameRules, gameLogic);
+const startProgressionGame = () => gameRoundGenerator(gameRules, gameLogic);
 
-export default startProgGame;
+export default startProgressionGame;
