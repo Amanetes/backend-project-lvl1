@@ -14,7 +14,7 @@ const gameLogic = () => {
   const firstNumber = getRandomNumber(0, 100);
   const secondNumber = getRandomNumber(0, 100);
   const gameQuestion = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = `${greatestDivisor(firstNumber, secondNumber)}`;
+  const correctAnswer = String(greatestDivisor(firstNumber, secondNumber));
   return [gameQuestion, correctAnswer];
 };
 

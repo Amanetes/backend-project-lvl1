@@ -4,7 +4,7 @@ import getRandomNumber from '../randomizer.js';
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number) => {
-  const halfNumber = number / 2;
+  const halfNumber = Math.sqrt(number);
   if (number < 2) {
     return false;
   }

@@ -4,31 +4,26 @@ import getRandomNumber from '../randomizer.js';
 const gameRules = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
-const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
 
 const calculate = (a, b) => {
-  let sum = 0;
   switch (randomOperator) {
     case '+':
-      sum = a + b;
-      break;
+      return a + b;
     case '-':
-      sum = a - b;
-      break;
+      return a - b;
     case '*':
-      sum = a * b;
-      break;
+      return a * b;
     default:
-      return null;
+      throw new Error(`operation ${randomOperator} is not supported`);
   }
-  return sum;
 };
 
 const gameLogic = () => {
   const firstNumber = getRandomNumber(0, 100);
   const secondNumber = getRandomNumber(0, 100);
   const gameQuestion = `${firstNumber} ${randomOperator} ${secondNumber}`;
-  const correctAnswer = `${calculate(firstNumber, secondNumber)}`;
+  const correctAnswer = String(calculate(firstNumber, secondNumber));
   return [gameQuestion, correctAnswer];
 };
 
