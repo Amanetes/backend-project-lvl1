@@ -1,4 +1,4 @@
-import gameRoundGenerator from '../index.js';
+import generateRounds from '../index.js';
 import getRandomNumber from '../randomizer.js';
 
 const gameRules = 'What number is missing in the progression?';
@@ -17,17 +17,17 @@ const hide = (progression, hiddenIndex) => {
   return hiddenArr.join(' ');
 };
 
-const gameLogic = () => {
+const getGameResult = () => {
   const randomInitialNumber = getRandomNumber(0, 100);
   const randomStep = getRandomNumber(1, 10);
   const randomLength = getRandomNumber(5, 10);
   const progression = getProgression(randomInitialNumber, randomStep, randomLength);
-  const getIndex = getRandomNumber(0, progression.length - 1);
-  const correctAnswer = String(progression[getIndex]);
-  const gameQuestion = String(hide(progression, getIndex));
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = String(progression[hiddenIndex]);
+  const gameQuestion = String(hide(progression, hiddenIndex));
   return [gameQuestion, correctAnswer];
 };
 
-const startProgressionGame = () => gameRoundGenerator(gameRules, gameLogic);
+const startProgressionGame = () => generateRounds(gameRules, getGameResult);
 
 export default startProgressionGame;

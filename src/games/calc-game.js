@@ -1,13 +1,12 @@
-import gameRoundGenerator from '../index.js';
+import generateRounds from '../index.js';
 import getRandomNumber from '../randomizer.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
-const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
 
-const calculate = (a, b) => {
-  switch (randomOperator) {
+const calculate = (a, b, operator) => {
+  switch (operator) {
     case '+':
       return a + b;
     case '-':
@@ -15,18 +14,19 @@ const calculate = (a, b) => {
     case '*':
       return a * b;
     default:
-      throw new Error(`operation ${randomOperator} is not supported`);
+      throw new Error(`operation ${operator} is not supported`);
   }
 };
 
-const gameLogic = () => {
+const getGameResult = () => {
   const firstNumber = getRandomNumber(0, 100);
   const secondNumber = getRandomNumber(0, 100);
+  const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
   const gameQuestion = `${firstNumber} ${randomOperator} ${secondNumber}`;
-  const correctAnswer = String(calculate(firstNumber, secondNumber));
+  const correctAnswer = String(calculate(firstNumber, secondNumber, randomOperator));
   return [gameQuestion, correctAnswer];
 };
 
-const startCalcGame = () => gameRoundGenerator(gameRules, gameLogic);
+const startCalcGame = () => generateRounds(gameRules, getGameResult);
 
 export default startCalcGame;
