@@ -4,11 +4,11 @@ import getRandomNumber from '../randomizer.js';
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number) => {
-  const radicand = Math.sqrt(number);
+  const sqrt = Math.sqrt(number);
   if (number < 2) {
     return false;
   }
-  for (let divisor = 2; divisor <= radicand; divisor += 1) {
+  for (let divisor = 2; divisor <= sqrt; divisor += 1) {
     if (number % divisor === 0) {
       return false;
     }
